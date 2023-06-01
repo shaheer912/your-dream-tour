@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 
 // const MONGODB_URL =
 //   'mongodb+srv://shaheer912:AEonY2LS4pBM5Y2M@cluster0.rcqoj9v.mongodb.net/?retryWrites=true&w=majority';
-
+console.log(process.env.MONGODB_URL);
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => {
