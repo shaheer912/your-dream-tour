@@ -29,8 +29,8 @@ app.all('/*', function (req, res, next) {
 app.use(morgan('dev'));
 app.use(express.json({ limit: '30mb', extended: true }));
 app.use(express.urlencoded({ limit: '30mb', extended: true }));
-// app.use(cors());
-// app.options('*', cors());
+app.use(cors());
+app.options('*', cors());
 app.use('/users', userRouter);
 app.use('/tours', tourRouter);
 app.get('/', (req, res) => {
