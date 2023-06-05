@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import userRouter from './routes/user.js';
 import tourRouter from './routes/tour.js';
+import contactRouter from './routes/contact.js';
 import 'dotenv/config';
 
 const PORT = process.env.PORT || 3000;
@@ -33,6 +34,7 @@ app.use(cors());
 app.options('*', cors());
 app.use('/users', userRouter);
 app.use('/tours', tourRouter);
+app.use('/contact', contactRouter);
 app.get('/', (req, res) => {
   res.send('Welcome to Tour API');
 });
